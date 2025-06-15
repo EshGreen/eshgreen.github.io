@@ -1,141 +1,33 @@
 @import "tailwindcss";
 
-/*───────────────────────────────────────────────────────────────────────────────*/
-/* 1. Design tokens via @theme — Tailwind will expose these as theme(...) & utilities */
 @theme {
-	/* fonts */
-	--font-sans: "Atkinson", sans-serif;
-
-	/* breakpoints */
-	--screen-md: 45rem;              /* 720px */
-
-	/* colors */
-	--color-accent: #12b200;
-	--color-accent-dark: #1e8600;
-	--color-black:        15,18,25;
-	--color-gray:         96,115,159;
-	--color-gray-light:   229,233,240;
-	--color-gray-dark:    34,41,57;
-
-	/* shadow */
-	--shadow-default:
-			0 2px 6px rgba(var(--color-gray),0.25),
-			0 8px 24px rgba(var(--color-gray),0.33),
-			0 16px 32px rgba(var(--color-gray),0.33);
-
-	/* radii */
-	--radius-sm: 2px;
-	--radius-md: 8px;
+  /* fonts */
+  --font-sans: "Atkinson", sans-serif;
 }
 
-/*───────────────────────────────────────────────────────────────────────────────*/
-/* 2. Base layer: font faces, resets & element defaults */
 @layer base {
-	::selection {
-		@apply bg-green-700 text-white;
-	}
-	/* your custom Atkinson fonts */
-	@font-face {
-		font-family: 'Atkinson';
-		src: url('/fonts/atkinson-regular.woff') format('woff');
-		font-weight: 400; font-style: normal; font-display: swap;
-	}
-	@font-face {
-		font-family: 'Atkinson';
-		src: url('/fonts/atkinson-bold.woff') format('woff');
-		font-weight: 700; font-style: normal; font-display: swap;
-	}
+  ::selection {
+    @apply bg-green-700 text-white;
+  }
 
-	/* undo Tailwind code styles inside pre */
-	pre > code { all: unset; }
+  img {
+    @apply rounded-lg;
+  }
 
-	/* body defaults */
-	body {
-		@apply m-0 p-0 text-left break-words;
-		font-family: theme('fontFamily.sans');
-		background: linear-gradient(
-				rgba(var(--color-gray-light),0.5),
-				#fff
-		) no-repeat;
-		background-size: 100% 600px;
-		@apply text-[18px] text-[rgb(var(--color-gray-dark))] leading-[1.7];
-	}
-	@screen md {
-		body { @apply text-[20px]; }
-	}
+  /* your custom Atkinson fonts */
+  @font-face {
+    font-family: "Atkinson";
+    src: url("/fonts/atkinson-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Atkinson";
+    src: url("/fonts/atkinson-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
 
-	/* main container */
-	main {
-		@apply w-[720px] max-w-[calc(100%-2em)] mx-auto px-4 py-4;
-	}
-	@screen md {
-		main { @apply py-[3em]; }
-	}
-
-	/* headings */
-	h1,h2,h3,h4,h5,h6 {
-		@apply m-0 mb-2 text-[rgb(var(--color-black))] leading-[1.2];
-	}
-	h1 { @apply text-[3.052em]; }
-	h2 { @apply text-[2.441em]; }
-	h3 { @apply text-[1.953em]; }
-	h4 { @apply text-[1.563em]; }
-	h5 { @apply text-[1.25em]; }
-
-	/* bold text */
-	strong, b { @apply font-bold; }
-
-	/* links */
-	a {
-		@apply text-[var(--color-accent)] hover:text-[var(--color-accent-dark)];
-	}
-
-	/* paragraphs */
-	p { @apply mb-4; }
-	.prose p { @apply mb-8; }
-
-	/* form controls */
-	textarea, input {
-		@apply w-full text-[16px];
-	}
-
-	/* tables */
-	table { @apply w-full; }
-
-	/* images */
-	img {
-		@apply max-w-full h-auto rounded-md;
-	}
-
-	/* inline code */
-	code {
-		@apply px-[5px] py-[2px] bg-[rgb(var(--color-gray-light))] rounded-[var(--radius-sm)];
-	}
-
-	/* code blocks */
-	pre {
-		@apply p-[1.5em] rounded-[var(--radius-md)] overflow-auto shadow-default;
-	}
-
-	/* blockquotes */
-	blockquote {
-		@apply border-l-4 border-[var(--color-accent)] pl-[20px] m-0 text-[1.333em];
-	}
-
-	/* horizontal rule */
-	hr {
-		@apply border-0 border-t border-[rgb(var(--color-gray-light))];
-	}
-
-	/* sr-only */
-	.sr-only { @apply sr-only; }
-}
-
-/*───────────────────────────────────────────────────────────────────────────────*/
-/* 3. Custom utilities */
-@layer utilities {
-	/* your bespoke shadow helper */
-	.shadow-default {
-		box-shadow: var(--shadow-default);
-	}
 }

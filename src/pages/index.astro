@@ -1,25 +1,28 @@
 ---
-import BaseHead from "components/BaseHead.astro"
-import Header from "components/Header.astro"
-import Footer from "components/Footer.astro"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
+import Layout from "layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import HeroImage from "assets/aire.png";
+import { Image } from "astro:assets";
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-</head>
-<body>
-<Header />
-<main>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <!-- Hero Section -->
-  <section class="py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-5xl font-extrabold mb-4">
+  <section class="relative h-[80vh] md:h-[60vh] w-full overflow-hidden">
+    <!-- Background Image -->
+    <Image
+        src={HeroImage}
+        alt="Hero background"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+    />
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+    <!-- Text Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl mb-4">
         Building Safer, Greener &amp; More Accessible Infrastructure Across Europe
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <p class="text-lg md:text-2xl max-w-2xl">
         With deep expertise in EU-funded projects and a passion for sustainable development,
         <span class="font-semibold">Esh.Green</span> designs, builds and maintains rest areas,
         parking facilities and essential utilities—wherever travelers need them most.
@@ -27,7 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
     </div>
   </section>
 
-  <div class="container mx-auto px-4 space-y-20">
+  <div class="container mx-auto px-4 pt-20 space-y-20">
     <!-- Our Mission -->
     <section id="mission">
       <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
@@ -46,7 +49,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
     <!-- What We Do -->
     <section>
       <h2 class="text-3xl font-bold mb-6">What We Do</h2>
-
       <div class="space-y-10">
         <div>
           <h3 class="text-2xl font-semibold mb-2">1. Roadside Service Areas</h3>
@@ -82,9 +84,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
       <h2 class="text-3xl font-bold mb-6">EU Funding &amp; Project Management</h2>
       <ol class="list-decimal list-inside space-y-3">
         <li><span class="font-semibold">Needs Assessment &amp; Feasibility:</span> Technical studies, site selection and demand analyses.</li>
-        <li><span class="font-semibold">Grant Application &amp; Partnership Building:</span> Dossiers for ERDF, Cohesion Fund, CEF and LIFE Programme calls; local authority and
-          industry consortia.
-        </li>
+        <li><span class="font-semibold">Grant Application &amp; Partnership Building:</span> Dossiers for ERDF, Cohesion Fund, CEF and LIFE Programme calls; local authority and industry consortia.</li>
         <li><span class="font-semibold">Compliance &amp; Reporting:</span> Audits, KPI tracking, environmental impact assessments and financial settlements.</li>
         <li><span class="font-semibold">Construction &amp; Handover:</span> Procurement, on-site supervision, commissioning and staff training.</li>
       </ol>
@@ -118,8 +118,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
       </p>
       <ul class="list-none space-y-1">
         <li><span class="font-semibold">Email:</span> <a href="mailto:contact@esh.green" class="text-blue-600 hover:underline">contact@esh.green</a></li>
-        <!--<li><span class="font-semibold">Phone:</span> +33 1 23 45 67 89</li>-->
-        <!--<li><span class="font-semibold">Address:</span> 12 rue de l’Innovation, 75015 Paris, France</li>-->
       </ul>
       <a
           href="mailto:contact@esh.green?subject=Esh.Green%20Project%20Inquiry"
@@ -129,7 +127,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
       </a>
     </section>
   </div>
-</main>
-<Footer />
-</body>
-</html>
+</Layout>

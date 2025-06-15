@@ -6,50 +6,48 @@ import Logo from "assets/logo.png"
 import Agenda from "assets/2030.png"
 ---
 
-<header class="bg-white px-4 shadow-lg shadow-green-400/10">
-  <nav class="flex items-center justify-between container mx-auto">
-    <!-- logo + title -->
-    <div class="flex items-center space-x-3">
-      <a href="/" class="block">
-        <Image src={Logo} alt="Site Logo" width={30} height={30} class="h-8 w-auto" />
+<header class="bg-white px-4 shadow-lg shadow-green-700/10 z-100">
+  <nav class="border-gray-200">
+    <div class="max-w-screen-xl mx-auto relative flex items-center justify-between p-4 z-100">
+      <!-- logo + title -->
+      <a href="/" class="flex items-center space-x-3">
+        <Image src={Logo} width={30} height={30} class="h-8" alt={`${SITE_TITLE} Logo`} />
+        <span class="text-2xl font-semibold whitespace-nowrap text-green-900 hover:text-green-700">{SITE_TITLE}</span>
       </a>
-      <h2 class="text-lg my-auto font-semibold text-green-700">
-        <a href="/">{SITE_TITLE}</a>
-      </h2>
-    </div>
 
-    <!-- nav links -->
-    <div class="flex items-center space-x-4">
-      <HeaderLink
-          href="/"
-          class="py-4 px-2 text-black border-b-4 border-transparent hover:border-b-accent"
-      >Home
-      </HeaderLink>
-      <HeaderLink
-          href="#mission"
-          class="py-4 px-2 text-black border-b-4 border-transparent hover:border-b-accent"
-      >Our Mission
-      </HeaderLink>
-      <HeaderLink
-          href="#contact"
-          class="py-4 px-2 text-black border-b-4 border-transparent hover:border-b-accent"
-      >Contact
-      </HeaderLink>
-      <!--<HeaderLink href="/blog"  class="py-4 px-2 text-black border-b-4 border-transparent hover:border-b-accent">Blog</HeaderLink>-->
-      <!--<HeaderLink href="/about" class="py-4 px-2 text-black border-b-4 border-transparent hover:border-b-accent">About</HeaderLink>-->
-    </div>
+      <!-- mobile menu (overlay panel) -->
+      <details class="md:hidden">
+        <summary class="flex items-center justify-end p-2 text-green-700 hover:bg-gray-100 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-200">
+          <span class="sr-only">Toggle menu</span>
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </summary>
+        <ul class="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-lg shadow-lg">
+          <li>
+            <HeaderLink href="/" class="block w-full text-center py-3 text-gray-900 hover:bg-green-100">Home</HeaderLink>
+          </li>
+          <!--<li>-->
+          <!--  <HeaderLink href="/about" class="block w-full text-center py-3 text-gray-900 hover:bg-green-100">About</HeaderLink>-->
+          <!--</li>-->
+          <li>
+            <a href="https://www.agenda-2030.fr/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full py-3 text-gray-900 hover:bg-green-100">
+              <Image src={Agenda} alt="Agenda 2030 Logo" width={20} height={20} class="h-6 w-auto mr-2" />
+              <span>Agenda 2030</span>
+            </a>
+          </li>
+        </ul>
+      </details>
 
-    <!-- social icon (hidden on small screens) -->
-    <div class="hidden md:flex items-center">
-      <a
-          href="https://www.agenda-2030.fr/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="py-4 px-2 text-black hover:text-black"
-      >
-        <span class="sr-only">Go to Agenda 2030</span>
-        <Image src={Agenda} alt="Agenda 2030 Logo" width={30} height={30} class="h-8 w-auto" />
-      </a>
+      <!-- desktop nav -->
+      <div class="hidden md:flex items-center space-x-8">
+        <HeaderLink href="/" class="text-gray-900 hover:text-green-700 transition-colors">Home</HeaderLink>
+        <!--<HeaderLink href="/about" class="text-gray-900 hover:text-green-700 transition-colors">About</HeaderLink>-->
+        <a href="https://www.agenda-2030.fr/" target="_blank" rel="noopener noreferrer" class="flex items-center text-gray-900 hover:text-green-700 transition-colors">
+          <Image src={Agenda} alt="Agenda 2030 Logo" width={20} height={20} class="h-6 w-auto mr-2" />
+          <span>Agenda 2030</span>
+        </a>
+      </div>
     </div>
   </nav>
 </header>

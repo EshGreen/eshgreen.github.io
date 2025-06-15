@@ -14,7 +14,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "")
     class:list={[
       className,
       "inline-block border-b-4 border-transparent no-underline hover:no-underline",
-      { "font-bold border-b-accent": isActive },
+      { "font-bold text-green-700 border-b-accent": isActive },
     ]}
     {...props}
 >
