@@ -13,36 +13,120 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 <body>
 <Header />
 <main>
-  <h1>🧑‍🚀 Hello, Astronaut!</h1>
-  <p>
-    Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-    template serves as a lightweight, minimally-styled starting point for anyone looking to build
-    a personal website, blog, or portfolio with Astro.
-  </p>
-  <p>
-    This template comes with a few integrations already configured in your
-    <code>astro.config.mjs</code> file. You can customize your setup with
-    <a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-    React, or Vue to your project.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
-  <ul>
-    <li>Edit this page in <code>src/pages/index.astro</code></li>
-    <li>Edit the site header items in <code>src/components/Header.astro</code></li>
-    <li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-    <li>Check out the included blog posts in <code>src/content/blog/</code></li>
-    <li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-  </ul>
-  <p>
-    Have fun! If you get stuck, remember to
-    <a href="https://docs.astro.build/">read the docs</a>
-    or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-  </p>
-  <p>
-    Looking for a blog template with a bit more personality? Check out
-    <a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-    by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-  </p>
+  <!-- Hero Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-4">
+        Building Safer, Greener &amp; More Accessible Infrastructure Across Europe
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        With deep expertise in EU-funded projects and a passion for sustainable development,
+        <span class="font-semibold">Esh.Green</span> designs, builds and maintains rest areas,
+        parking facilities and essential utilities—wherever travelers need them most.
+      </p>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 space-y-20">
+    <!-- Our Mission -->
+    <section id="mission">
+      <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+      <p class="mb-4">
+        At <span class="font-semibold">Esh.Green</span>, we believe that every journey should be safe,
+        comfortable and environmentally responsible. Our mission is to:
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li><span class="font-semibold">Enhance connectivity</span> by delivering modern rest stops and parking along key transport corridors.</li>
+        <li><span class="font-semibold">Promote public health &amp; hygiene</span> through clean, well-maintained sanitation facilities.</li>
+        <li><span class="font-semibold">Champion sustainability</span> by integrating green technologies and eco-friendly materials.</li>
+        <li><span class="font-semibold">Maximize EU Impact</span> by securing and managing European Commission funding to deliver high-value infrastructure.</li>
+      </ul>
+    </section>
+
+    <!-- What We Do -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">What We Do</h2>
+
+      <div class="space-y-10">
+        <div>
+          <h3 class="text-2xl font-semibold mb-2">1. Roadside Service Areas</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><span class="font-semibold">Sanitation Facilities:</span> Modular, gender-separate restrooms with water-saving fixtures.</li>
+            <li><span class="font-semibold">Comfort Zones:</span> Covered seating, picnic areas and electric vehicle charging stations.</li>
+            <li><span class="font-semibold">Safety Features:</span> LED lighting, CCTV monitoring and emergency call points.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-2">2. Parking &amp; Mobility Hubs</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><span class="font-semibold">Park-and-Ride Lots:</span> Adjacent to public transport nodes.</li>
+            <li><span class="font-semibold">Logistics Parking:</span> HGV driver rest areas compliant with regulations.</li>
+            <li><span class="font-semibold">Smart Parking Solutions:</span> Real-time availability displays and contactless payment.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-2">3. Utilities &amp; Amenities</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><span class="font-semibold">Water &amp; Waste Management:</span> Rainwater harvesting, greywater recycling and on-site treatment.</li>
+            <li><span class="font-semibold">Renewable Energy:</span> Solar canopies, geothermal pumps and energy-efficient HVAC.</li>
+            <li><span class="font-semibold">Digital Infrastructure:</span> Wi-Fi hotspots, infotainment kiosks and traffic-data sensors.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EU Funding & Project Management -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">EU Funding &amp; Project Management</h2>
+      <ol class="list-decimal list-inside space-y-3">
+        <li><span class="font-semibold">Needs Assessment &amp; Feasibility:</span> Technical studies, site selection and demand analyses.</li>
+        <li><span class="font-semibold">Grant Application &amp; Partnership Building:</span> Dossiers for ERDF, Cohesion Fund, CEF and LIFE Programme calls; local authority and industry consortia.</li>
+        <li><span class="font-semibold">Compliance &amp; Reporting:</span> Audits, KPI tracking, environmental impact assessments and financial settlements.</li>
+        <li><span class="font-semibold">Construction &amp; Handover:</span> Procurement, on-site supervision, commissioning and staff training.</li>
+      </ol>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Why Choose ESH.Green?</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 list-none">
+        <li class="flex items-start space-x-3">
+          <span class="font-semibold">Proven Track Record:</span> Experts in multi-million-euro EU-backed infrastructure projects.
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="font-semibold">Pan-European Network:</span> Partnerships spanning France, Bulgaria, Romania, Spain and beyond.
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="font-semibold">Sustainability First:</span> Aligned with the EU’s Green Deal and Circular Economy Action Plan.
+        </li>
+        <li class="flex items-start space-x-3">
+          <span class="font-semibold">Local Know-How:</span> Native teams in each country for rapid approvals and stakeholder coordination.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section  id="contact">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="mb-4">
+        Whether you represent a national authority, transport operator or private investor, let’s discuss how
+        <span class="font-semibold">Esh.Green</span> can bring world-class infrastructure to your region.
+      </p>
+      <ul class="list-none space-y-1">
+        <li><span class="font-semibold">Email:</span> <a href="mailto:contact@esh.green" class="text-blue-600 hover:underline">contact@esh.green</a></li>
+        <!--<li><span class="font-semibold">Phone:</span> +33 1 23 45 67 89</li>-->
+        <!--<li><span class="font-semibold">Address:</span> 12 rue de l’Innovation, 75015 Paris, France</li>-->
+      </ul>
+      <a
+          href="mailto:contact@esh.green?subject=ESH.Green%20Project%20Inquiry"
+          class="inline-block mt-6 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow hover:bg-green-700"
+      >
+        Request a Consultation
+      </a>
+    </section>
+  </div>
 </main>
 <Footer />
 </body>
